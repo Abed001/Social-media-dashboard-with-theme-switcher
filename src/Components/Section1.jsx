@@ -5,8 +5,8 @@ import instagram from '/src/images/icon-instagram.svg'
 import youtube from '/src/images/icon-youtube.svg'
 import iconUp from "/src/images/icon-up.svg";
 import iconDown from "/src/images/icon-down.svg";
+import { clsx } from 'clsx';
 export default function Section1() {
-
 
     const sections = [
         {
@@ -15,7 +15,7 @@ export default function Section1() {
             followers: 1987,
             title: "followers",
             up: 12,
-            color: "bg-Facebook",
+            color: "border-Facebook",
         },
         {
             logo: twitter,
@@ -23,7 +23,7 @@ export default function Section1() {
             followers: 1044,
             title: "followers",
             up: 99,
-            color: "bg-Twitter",
+            color: "border-Twitter",
         },
         {
             logo: instagram,
@@ -31,7 +31,7 @@ export default function Section1() {
             followers: "11k",
             title: "followers",
             up: 1099,
-            color: "bg-Linear-Gradient-Instagram",
+            color: "border-Insta",
         },
         {
             logo: youtube,
@@ -39,23 +39,23 @@ export default function Section1() {
             followers: 8239,
             title: "subscribers",
             down: 144,
-            color: "bg-Youtube",
+            color: "border-YouTube",
         },
     ];
 
     return (
         <>
-            <div className='font-Inter gap-y-10 mt-5 flex flex-col justify-center items-center'>
+            <div className=' font-Inter gap-y-10 mt-5 grid justify-center items-center lg:grid-cols-4 lg:gap-x-5 '>
                 {sections.map((card, index) => (
 
-                    <div key={index} className='p-10 flex flex-col items-center w-[400px] h-[300px] cardbg rounded-lg'>
-                        <div className='flex flex-row gap-x-3 '>
+                    <div key={index} className={clsx("border-t-[5px] p-2 flex flex-col justify-center items-center w-[400px] h-[300px] lg:w-[250px] lg:h-[150px]  cardbg rounded-lg", card.color)}>
+                        <div className='flex flex-row  gap-x-3 '>
                             <img src={card.logo} />
                             <p className='font-bold'>{card.name}</p>
                         </div>
                         <div className='flex flex-col justify-center items-center w-[100vw]'>
-                            <h1 className='font-bold text-[60px]'>{card.followers}</h1>
-                            <p className='tracking-widest text-[20px] uppercase'>{card.title}</p>
+                            <h1 className='font-bold text-[60px] lg:text-[30px] followertextcolor' l>{card.followers}</h1>
+                            <p className='tracking-widest text-[20px] lg:text-[10px] uppercase'>{card.title}</p>
                             <div className='flex flex-row justify-center items-center gap-x-2 mt-5'>
                                 <img className="scale-[1.2] "
                                     src={card.up ? iconUp : iconDown} />

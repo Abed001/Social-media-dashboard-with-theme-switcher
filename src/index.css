@@ -6,12 +6,13 @@
 @tailwind utilities;
 
 :root {
-    --backgroundtop: ##f5fcff;
+    --backgroundtop: #e0f3ff;
     --background: #ffffff;
     --cardbg: #d9e8f5;
     --text-primary:  #6b7b8c;
     --text-secondary: #020e24;
-    --border:#000
+    --border:#000000;
+    --toggle:#c2d7e6;
 
   }
   
@@ -22,7 +23,8 @@
     --text-secondary: #8e05c2;
     --text-primary: #a1b2bf;
     --text-secondary:#ffffff;
-    --border:#fff
+    --border:#ffffff;
+    --toggle:linear-gradient(to right, #004080, #397365);
   }
   
   * {
@@ -49,4 +51,22 @@
 
     .cardbg{
         background-color: var(--cardbg);
+    }
+
+    .followertextcolor{
+      color: var(--text-secondary);
+  }
+
+    .topbg{
+      width:100%;
+      height:300px;
+      background-color: var(--backgroundtop);
+      border-bottom-left-radius: 25px;
+      border-bottom-right-radius: 25px;
+    }
+
+    .gridcontainer{ 
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px; /* Adjust the gap as needed */
     }
